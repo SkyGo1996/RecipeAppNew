@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recipe"
+            type="com.example.recipeappnew.database.Recipe" />
+        <variable
+            name="clickListener"
+            type="com.example.recipeappnew.recipemain.RecipeListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:onClick="@{()->clickListener.onClick(recipe)}">
+
+        <ImageView
+            android:id="@+id/item_recipe_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_baseline_local_dining_24"
+            app:loadRecipeItemImage="@{recipe}"/>
+
+        <TextView
+            android:id="@+id/item_recipe_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20sp"
+            android:text="@{recipe.recipeName}"
+            android:textAlignment="center"
+            tools:text="Recipe Name"
+            app:layout_constraintStart_toEndOf="@id/item_recipe_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+
+        <TextView
+            android:id="@+id/item_recipe_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="16sp"
+            android:text="@{recipe.recipeType}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_recipe_image"
+            app:layout_constraintTop_toBottomOf="@id/item_recipe_name"
+            tools:text="Recipe Type" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

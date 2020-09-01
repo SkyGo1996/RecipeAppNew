@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">RecipeAppNew</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ingredient_label">Ingredient</string>
+    <string name="steps_label">Steps</string>
+    <string name="add_new_recipe_label">Add New Recipe</string>
+    <string name="recipe_add_name_label">Recipe Name</string>
+    <string name="recipe_add_type_label">Recipe Type:</string>
+    <string name="recipe_add_ingredient_label">Ingredient(s)</string>
+    <string name="recipe_add_steps_label">Preparing Step(s)</string>
+    <string name="recipe_add_button_label">Add</string>
+    <string name="recipe_add_cancel_label">Cancel</string>
+    <string name="recipe_edit_text_ingredient">ingredient</string>
+    <string name="recipe_add_name_is_empty">Recipe name cannot be empty!</string>
+    <string name="recipe_add_ingredient_is_empty">Recipe Ingredient(s) cannot be empty!</string>
+    <string name="recipe_add_step_is_empty">Recipe Preparing Step(s) cannot be empty!</string>
+    <string-array name="recipe_type">
+        <item>All</item>
+        <item>Main Course</item>
+        <item>Dessert</item>
+        <item>Drinks</item>
+        <item>Side Dishes</item>
+    </string-array>
+    <string name="recipe_detail_delete_successful_message">Successfully delete recipe</string>
+    <string name="edit_recipe_label">Edit Recipe</string>
+    <string name="recipe_edit_button_label">Update</string>
+</resources>

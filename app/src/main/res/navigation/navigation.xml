@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/recipeMainFragment">
+
+    <fragment
+        android:id="@+id/recipeMainFragment"
+        android:name="com.example.recipeappnew.recipemain.RecipeMainFragment"
+        android:label="fragment_recipe_main"
+        tools:layout="@layout/fragment_recipe_main" >
+        <action
+            android:id="@+id/action_recipeMainFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment"
+            app:enterAnim="@anim/enter_slide_right_to_left"
+            app:exitAnim="@anim/exit_slide_right_to_left"
+            app:popEnterAnim="@anim/pop_enter_slide_left_to_right"
+            app:popExitAnim="@anim/pop_exit_slide_left_to_right" />
+        <action
+            android:id="@+id/action_recipeMainFragment_to_recipeAddFragment"
+            app:destination="@id/recipeAddFragment"
+            app:enterAnim="@anim/enter_slide_right_to_left"
+            app:exitAnim="@anim/exit_slide_right_to_left"
+            app:popEnterAnim="@anim/pop_enter_slide_left_to_right"
+            app:popExitAnim="@anim/pop_exit_slide_left_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.example.recipeappnew.recipedetail.RecipeDetailFragment"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail">
+        <argument android:name="selectedRecipe"
+            app:argType="com.example.recipeappnew.database.Recipe"/>
+        <action
+            android:id="@+id/action_recipeDetailFragment_to_recipeEditFragment"
+            app:destination="@id/recipeEditFragment"
+            app:enterAnim="@anim/enter_slide_right_to_left"
+            app:exitAnim="@anim/exit_slide_right_to_left"
+            app:popEnterAnim="@anim/pop_enter_slide_left_to_right"
+            app:popExitAnim="@anim/pop_exit_slide_left_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeAddFragment"
+        android:name="com.example.recipeappnew.recipeadd.RecipeAddFragment"
+        android:label="fragment_recipe_add"
+        tools:layout="@layout/fragment_recipe_add"/>
+    <fragment
+        android:id="@+id/recipeEditFragment"
+        android:name="com.example.recipeappnew.recipeedit.RecipeEditFragment"
+        android:label="fragment_recipe_edit"
+        tools:layout="@layout/fragment_recipe_edit" >
+        <argument
+            android:name="selectedRecipe"
+            app:argType="com.example.recipeappnew.database.Recipe" />
+    </fragment>
+</navigation>
